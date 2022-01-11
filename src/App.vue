@@ -1,26 +1,33 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <component :is="layout" />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import BlankLayout from "@/layouts/blank/Blank";
+import MainLayout from "@/layouts/main/Main";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+    name: 'App',
+    components: {
+        MainLayout,
+        BlankLayout
+    },
+    data() {
+        return {
+            layout: null,
+        };
+    },
+    watch: {
+        $route(to) {
+            // set layout by route meta
+            if (to.meta.layout !== undefined) {
+                this.layout = to.meta.layout
+                document.body.classList.add('login-page');
+            } else {
+                this.layout = "MainLayout" // this is default layout if route meta is not set
+                document.body.classList.remove('login-page');
+            }
+        },
+    },    
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

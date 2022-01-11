@@ -1,0 +1,27 @@
+<page-title icon='pagetitle.icon'  title='Dashboard'></page-title>
+
+<section class="content">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title"><i class="fa fa-home"></i>&nbsp;Dashboard</h3>
+            <div class="card-tools">
+                <router-link to="/dashboard" class="btn btn-tool" title="Refresh">
+                    <i class="fa fa-recycle"></i>
+                </router-link>
+            </div>
+        </div>
+        <div class="card-body">
+            Selamat Datang <strong>{{ user.name }}</strong>
+            <ul class="list-group">
+                <li @click="logout" class="list-group-item text-dark text-decoration-none" style="cursor:pointer">LOGOUT</li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+    
+
+
+</section>
