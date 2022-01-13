@@ -11,7 +11,7 @@
             {{ progressBar }}% {{ progressDescription }}
             </span>
         </div>
-        <div class="overlay" v-if=overlay >
+        <div class="overlay" v-if=overlay :class="{ dark: isDark}" >
             <i class="fas fa-2x fa-sync-alt fa-spin"></i>
         </div>
     </div>    
@@ -59,9 +59,11 @@ export default {
         overlay:{
             type:Boolean,
             default:false
-        }                  
-        
-
+        },
+        isDark:{
+            type:Boolean,
+            default:false
+        }                          
     }
 }
 </script>

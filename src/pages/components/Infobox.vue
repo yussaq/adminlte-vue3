@@ -13,7 +13,7 @@
                     boxText= "Messages" 
                     boxNumber= "1,410"
                     :overlay= false
-                      >
+                    :isDark= true >
                 </info-box>    
             </div>
             <div class="col-md-4 col-sm-6 col-12">
