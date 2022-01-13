@@ -1,6 +1,7 @@
 import {createRouter, createWebHistory} from 'vue-router';
 import Dashboard from '../pages/dashboard/Dashboard';
 import Infopage from '../pages/components/Infobox';
+import Card from '../pages/components/Card';
 
 const routes = [
     {
@@ -12,7 +13,12 @@ const routes = [
         path: "/infobox",
         name: "Infobox",
         component: Infopage,
-    }, 
+    },
+    {
+        path: "/card",
+        name: "Card",
+        component: Card,
+    },     
 
     
 ];
